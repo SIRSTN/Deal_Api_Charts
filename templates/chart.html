@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Volume Charts</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Deal Transactions Charts</h1>
+    <div id="TotalEffectiveVolumeChart"></div>
+    <div id="TotalExpectedVolumeChart"></div>
+    <div id="DealExpectedVolumeChart"></div>
+    <div id="TotalExpectedValuationChart"></div>
+    <script>
+        var graphJSON1 = {{ graphJSON1 | safe }};
+        Plotly.newPlot('TotalEffectiveVolumeChart', graphJSON1.data, graphJSON1.layout);
+        
+        var graphJSON2 = {{ graphJSON2 | safe }};
+        Plotly.newPlot('TotalExpectedVolumeChart', graphJSON2.data, graphJSON2.layout);
+        
+        var graphJSON3 = {{ graphJSON3 | safe }};
+        Plotly.newPlot('DealExpectedVolumeChart', graphJSON3.data, graphJSON3.layout);
+
+        var graphJSON4 = {{ graphJSON4 | safe }};
+        Plotly.newPlot('TotalExpectedValuationChart', graphJSON4.data, graphJSON4.layout);
+    </script>
+</body>
+</html>
