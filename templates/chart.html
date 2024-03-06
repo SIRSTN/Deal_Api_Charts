@@ -7,6 +7,16 @@
 </head>
 <body>
     <h1>Deal Transactions Charts</h1>
+    <form action="/" method="get">
+        From: <input type="date" name="from_date" value="{{ from_date }}">
+        To: <input type="date" name="to_date" value="{{ to_date }}">
+        Keyword: 
+        <select name="keyword">
+            <option value="Bitcoin" {% if keyword == "Bitcoin" %} selected {% endif %}>Bitcoin</option>
+            <option value="Ethereum" {% if keyword == "Ethereum" %} selected {% endif %}>Ethereum</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
     <div id="TotalEffectiveVolumeChart"></div>
     <div id="TotalExpectedVolumeChart"></div>
     <div id="DealExpectedVolumeChart"></div>
