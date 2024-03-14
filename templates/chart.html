@@ -17,22 +17,34 @@
         </select>
         <button type="submit">Search</button>
     </form>
+    <div id="DailyFluctuationPriceChart"></div>
     <div id="TotalEffectiveVolumeChart"></div>
     <div id="TotalExpectedVolumeChart"></div>
     <div id="DealExpectedVolumeChart"></div>
     <div id="TotalExpectedValuationChart"></div>
+    <div id="DealLastVolumeChart"></div>
+    <div id="DealLastValuationChart"></div>
     <script>
         var graphJSON1 = {{ graphJSON1 | safe }};
-        Plotly.newPlot('TotalEffectiveVolumeChart', graphJSON1.data, graphJSON1.layout);
-        
+        Plotly.newPlot('DailyFluctuationPriceChart', graphJSON1.data, graphJSON1.layout);
+
         var graphJSON2 = {{ graphJSON2 | safe }};
-        Plotly.newPlot('TotalExpectedVolumeChart', graphJSON2.data, graphJSON2.layout);
+        Plotly.newPlot('TotalEffectiveVolumeChart', graphJSON2.data, graphJSON2.layout);
         
         var graphJSON3 = {{ graphJSON3 | safe }};
-        Plotly.newPlot('DealExpectedVolumeChart', graphJSON3.data, graphJSON3.layout);
-
+        Plotly.newPlot('TotalExpectedVolumeChart', graphJSON3.data, graphJSON3.layout);
+        
         var graphJSON4 = {{ graphJSON4 | safe }};
-        Plotly.newPlot('TotalExpectedValuationChart', graphJSON4.data, graphJSON4.layout);
+        Plotly.newPlot('DealExpectedVolumeChart', graphJSON4.data, graphJSON4.layout);
+
+        var graphJSON5 = {{ graphJSON5 | safe }};
+        Plotly.newPlot('TotalExpectedValuationChart', graphJSON5.data, graphJSON5.layout);
+
+        var graphJSON6 = {{ graphJSON6 | safe }};
+        Plotly.newPlot('DealLastVolumeChart', graphJSON6.data, graphJSON6.layout);
+
+        var graphJSON7 = {{ graphJSON7 | safe }};
+        Plotly.newPlot('DealLastValuationChart', graphJSON7.data, graphJSON7.layout);
     </script>
 </body>
 </html>
